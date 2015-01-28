@@ -1,0 +1,15 @@
+General
+-Stylize site
+
+Additional
+-JS backups for maxlength
+-Add AJAX username check
+-home.php changes using AJAX
+-Delete account from home.php
+-Profile pictures
+-Add leap days to dob
+-Get messages to clear after 30 days
+-AJAX recipient suggestions in Compose
+-Bold on unread messages
+-Send message links on profiles
+-Use htmlspecialchars on output not input

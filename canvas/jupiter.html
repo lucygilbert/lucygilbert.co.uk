@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jupiter and the Gallilean Moons</title>
+</head>
+
+<body onload="Init()">
+
+<canvas id="canvas1" width="1200" height="1200" style="border:1px solid black;">Your browser does not support the Canvas element</canvas>
+
+<script>
+
+var SCALE = 3500
+var REFRESHRATE = 100
+
+var Bodys = []
+var titlestring = "Jupiter and the Gallilean Moons"
+var introstring = "Body radii, orbital radii and relative orbital periods all accurate to a scale of "+SCALE+"km to 1 pixel and a time-scale of 1 second to 1 hour."
+
+var canvas= document.getElementById("canvas1")
+var c = canvas.getContext("2d")
+
+//Body pseudo-class
+function Body(name, rad, sma, op) {
+  this.name = name
+  this.radius = rad //In km
+  this.sma = sma //Semi-major axis, to closest 100km
+  this.op = op //Orbital period, to closest hour
+  this.angle = 0 //Current position, as an angle of the orbit, in degrees
+}
+
+//Method to move body
+Body.prototype.move = function() {
+  this.angle += 360/(this.op*10)
+};
+
+//Function to animate body movement
+function moveBodys() {
+  canvas.width = canvas.width
+  //Draw title
+  c.fillStyle = "red"
+  c.font = "18px Arial" 
+  c.fillText(titlestring, canvas.width/2-c.measureText(titlestring).width/2, 30)
+  c.font = "15px Arial"
+  c.fillText(introstring, canvas.width/2-c.measureText(introstring).width/2, 50)
+  for (var i = 0; i < Bodys.length; i++) {
+    Bodys[i].move()
+    //Draw orbit
+    c.beginPath()
+    c.arc(canvas.width/2, canvas.height/2, Bodys[i].sma/SCALE, 0, 2*Math.PI)
+    c.stroke()
+    c.closePath()
+    //Draw body
+    bodyx = (canvas.width / 2) + (Bodys[i].sma / SCALE) * Math.cos(Bodys[i].angle * (Math.PI / 180))
+    bodyy = (canvas.height / 2) + (Bodys[i].sma / SCALE) * Math.sin(Bodys[i].angle * (Math.PI / 180))
+    bodyr = Bodys[i].radius/SCALE
+    c.beginPath()
+    c.arc(bodyx, bodyy, bodyr, 0, 2*Math.PI)
+    c.stroke()
+    c.closePath()
+    c.fill()
+    //Draw label
+    c.font = "12px Arial"
+    c.fillText(Bodys[i].name, 5+bodyx+Bodys[i].radius/SCALE, bodyy)
+  }
+}
+
+//Initial function
+function Init() {
+  Bodys[0] = new Body("Jupiter", 69911, 0, 1)
+  Bodys[1] = new Body("Io", 1830, 421700, 42)
+  Bodys[2] = new Body("Europa", 1561, 671000, 85)
+  Bodys[3] = new Body("Ganymede", 2631, 1070400, 172)
+  Bodys[4] = new Body("Callisto", 2411, 1882700, 401)
+  timer = setInterval(moveBodys, REFRESHRATE)
+  return timer
+}
+
+</script> 
+
+</body>
+
+</html>
