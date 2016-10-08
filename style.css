@@ -1,5 +1,6 @@
 body {
-  font: normal 1.2rem "Architects Daughter", cursive;
+  font: 1.4rem "Caveat", cursive;
+  font-weight: 400;
   letter-spacing: 1px;
   line-height: 25px;
   background: linear-gradient(to bottom, lightblue 0%, white 8%) 0 4px;
@@ -7,7 +8,7 @@ body {
 }
 
 nav {
-  margin: 45px 0 60px 0;
+  margin: 45px 0 55px 0;
   text-align:center;
 }
 
@@ -55,9 +56,10 @@ img {
 }
 
 .container--main {
-  height:auto;
-  width:800px;
-  margin:auto;
+  height: auto;
+  min-width: 550px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .container--half-width {
@@ -68,6 +70,10 @@ img {
 .container--max-width {
   width: 96%;
   margin: 0 2%;
+}
+
+.container--max-width + .container--max-width {
+  margin-top: 45px;
 }
 
 .container--padding {
@@ -103,7 +109,7 @@ img {
 }
 
 .text--bold {
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 .text--center {
