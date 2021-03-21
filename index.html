@@ -4,36 +4,37 @@
 <head>
   <title>Lucy Gilbert: Online CV</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Caveat:400,700" rel="stylesheet">
 </head>
 
 <body onload="changePage(Pages.ABOUT)">
+  <nav>
+    <input type="checkbox" id="nav-check">
+    <div class="header">
+      <div class="title">
+        <a onclick="changePage(Pages.ABOUT)" href="javascript:void(0)">Lucy Gilbert</a>
+      </div>
+    </div>
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    
+    <div class="nav-links">
+      <a id="aboutLink" onclick="changePage(Pages.ABOUT)" href="javascript:void(0)">About</a>
+      <a id="skillsLink" onclick="changePage(Pages.SKILLS)" href="javascript:void(0)">Skills</a>
+      <a id="employmentLink" onclick="changePage(Pages.EMPLOYMENT)" href="javascript:void(0)">Employment</a>
+      <a id="contactLink" onclick="changePage(Pages.CONTACT)" href="javascript:void(0)">Contact</a>
+    </div>
+  </nav>
+
   <div class="container--main">
-    <h1 class="text--center">Lucy Gilbert</h1>
-
-    <nav class="text--non-selectable">
-      <a id="aboutLink" class="nav-link border--drawn"
-         onclick="changePage(Pages.ABOUT)" href="javascript:void(0)">
-        About
-      </a>
-      <a id="skillsLink" class="nav-link border--drawn"
-         onclick="changePage(Pages.SKILLS)" href="javascript:void(0)">
-        Skills
-      </a>
-      <a id="employmentLink" class="nav-link border--drawn"
-         onclick="changePage(Pages.EMPLOYMENT)" href="javascript:void(0)">
-        Employment
-      </a>
-      <a id="contactLink" class="nav-link border--drawn"
-         onclick="changePage(Pages.CONTACT)" href="javascript:void(0)">
-        Contact
-      </a>
-    </nav>
-
     <div id="about">
-      <p>I'm a software engineer, language agnostic, but strongest in PHP, Ruby and Javascript.</p>
+      <p>I'm a software engineer, full stack but with a backend focus - function over form. Language agnostic, but strongest in <span class="text--bold">Ruby</span>, <span class="text--bold">Rails</span> and <span class="text--bold">Javascript</span>. I also have some experience in <span class="text--bold">PHP</span>.</p>
       <p>If you are looking for an engineer, you can find more details on the skills and employment pages.</p>
-      <p>E-mail me at <a href="mailto:lucygilbert01@gmail.com">lucygilbert01@gmail.com</a> or check my contact page for my GitHub and LinkedIn.</p>
+      <p>E-mail me at <a class="text--bold" href="mailto:lucy@lucygilbert.co.uk">lucy@lucygilbert.co.uk</a> or check my contact page for my GitHub and LinkedIn.</p>
     </div>
 
     <div id="skills">
@@ -43,23 +44,23 @@
         <p><span class="text--large text--bold">HTML5/CSS3</span> including SASS/SCSS/various templating languages.</p>
         <p>Extensive experience, both designing and working in conjunction with a designer.</p>
 
-        <p><span class="text--large text--bold">JavaScript</span> including AngularJS, React, Node, jQuery, Jasmine etc.</p>
-        <p>The <span class="text--bold"><a href="http://www.github.com/lucygilbert/citypantry-3-frontend">City Pantry frontend</a></span> is a large complex Angular SPA interacting with a variety of third party libraries and APIs, with comprihensive testing with Jasmine.</p>
-        <p>I also created the <a class="text--bold" href="http://www.github.com/lucygilbert/citypantry-mobile-vendor-app">CityPantry vendor mobile app</a> using Ionic with Angular and Cordova, the app was published both on the web and on Android.</p>
-        <p>The <span class="text--bold">Trail frontend</span> is a combination of embedded Ruby and React components architectured with Redux, integrating with several large hospitality and retail platforms</p>
-        <p>Testing in Trail is covered by RSpec functional testing and Jasmine unit testing.</p>
+        <p><span class="text--large text--bold">JavaScript</span> including React, Node, AngularJS, jQuery, Jasmine, Jest, Enzyme, etc.</p>
+        <p>The <span class="text--bold">Trail frontend</span> is a combination of Rails served pages and React components architectured with Redux, integrating with several large hospitality and retail platforms</p>
+        <p>Testing in Trail is covered by RSpec feature testing and Jasmine, Jest and Enzyme unit and integration testing.</p>
+        <p>The <span class="text--bold">City Pantry frontend</span> was an Angular SPA interacting with a variety of third party libraries and APIs, with comprihensive testing with Jasmine.</p>
+        <p>I also created the <span class="text--bold">CityPantry vendor mobile app</span> using Ionic with Angular and Cordova, the app was published both on the web and on Android.</p>
       </div>
 
       <div class="container--half-width container--float">
         <h2>Backend</h2>
 
-        <p><span class="text--large text--bold">PHP</span> including the Symfony2 framework, PHPUnit, Gearman etc.</p>
-        <p>The <span class="text--bold">City Pantry backend</span> is based on Symfony2 with MongoDB and additions such as Mongrate, Geocoder and Gearman, with testing in PHPUnit.</p>
-        <p>It communicates with several third party APIs, Twilio for SMS messaging, Braintree for card payments, multiple analytics tools (Google Analytics, Segment, etc.) and integration with a marketing site using HubSpot.</p>
-
         <p><span class="text--large text--bold">Ruby</span> including the Rails framework, RSpec, Sidekiq etc.</p>
         <p>The <span class="text--bold">Trail backend</span> is a Rails app, architected around a domain-driven design, using event-sourcing and CQRS, with PostgreSQL and RSpec testing</p>
-        <p>It integrates with various hospitality and retail systems, from Forth to HospitalityGem to IBS. The platform extends out onto AWS, making use of DynamoDB, Lambda and S3.</p>
+        <p>It integrates with various hospitality and retail systems, from Forth to HospitalityGem. The platform extends out onto AWS, making use of DynamoDB, Lambda and S3. It integrates with Stripe and Chargebee for billing, and Segment and Mixpanel for metrics recording.</p>
+
+        <p><span class="text--large text--bold">PHP</span> including the Symfony2 framework, PHPUnit, Gearman etc.</p>
+        <p>The <span class="text--bold">City Pantry backend</span> was based on Symfony2 with MongoDB and additions such as Mongrate, Geocoder and Gearman, with testing in PHPUnit.</p>
+        <p>It communicated with several third party APIs, Twilio for SMS messaging, Braintree for card payments, multiple analytics tools (Google Analytics, Segment, etc.) and integration with a marketing site using HubSpot.</p>
 
         <p><span class="text--large text--bold">PostgreSQL</span>, used primarily with Trail, with Rail's ActiveRecord.</p>
 
@@ -85,8 +86,8 @@
         <p>Full stack engineer. Ruby on Rails, React, PostgreSQL.</p>
 
         <p>I have helped Trailsuite move away from their original monolithic architecture towards micro-services,  the implementation of CQRS and event-sourcing, and the transition from Angular to React and Redux.</p>
-        <p>We also handled the growth of the company from only a handful of stores using the app to hundreds, scaling the technology to respond to this.</p>
-        <p>I dealt with the integration of a variety of APIs and platforms, including social media (incl. Facebook, Twitter, TripAdvisor), hospitality systems (incl. Forth, HospitalityGem, LiveStore), and emailing solutions (Mandrill and MailChimp).</p>
+        <p>We also handled the growth of the company from only a handful of stores using the app to thousands, scaling the technology to respond to this.</p>
+        <p>I dealt with the integration of a variety of APIs and platforms, including social media (incl. Facebook, Twitter, TripAdvisor), hospitality systems (incl. Forth, HospitalityGem, LiveStore), emailing solutions (Mandrill and MailChimp), and custom integration with Zapier.</p>
       </div>
 
       <div class="container--max-width">
@@ -107,9 +108,9 @@
     </div>
 
     <div id="contact">
-      <div class="container--half-width container--center border--drawn">
-        <a href="mailto:lucygilbert01@gmail.com">
-          <img class="image--small" src="mail.svg">Email lucygilbert01@gmail.com
+      <div class="container--fit-content container--center">
+        <a href="mailto:lucy@lucygilbert.co.uk">
+          <img class="image--small" src="mail.svg">Email lucy@lucygilbert.co.uk
         </a><br />
         <a href="http://www.linkedin.com/pub/lucy-gilbert/76/a11/782">
           <img class="image--small" src="linkedin.svg">Find me on LinkedIn

@@ -12,6 +12,8 @@ var PageLinks = {
 };
 
 function changePage(selectedPage) {
+  var navCheck = document.getElementById('nav-check');
+  navCheck.checked = false;
   Object.keys(Pages).forEach(function (key) {
     var page = document.getElementById(Pages[key]);
     var pageLink = document.getElementById(PageLinks[key]);
