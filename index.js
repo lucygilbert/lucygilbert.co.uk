@@ -1,3 +1,5 @@
+// Version 1.2
+
 var Pages = {
   ABOUT: 'about',
   SKILLS: 'skills',
