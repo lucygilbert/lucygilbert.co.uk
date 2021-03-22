@@ -1,4 +1,4 @@
-/* Version 1.5 */
+/* Version 1.6 */
 
 * {
   box-sizing: border-box;
@@ -217,7 +217,18 @@ img {
   }
 }
 
-@media (max-width:480px) {
+@media (max-width:500px) {
+  div#contact a {
+    font-size: 1rem;
+  }
+
+  .image--small {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (max-width:350px) {
   div#contact a {
     font-size: 0.8rem;
   }
