@@ -4,18 +4,32 @@
 <head>
   <title>Lucy Gilbert: Online CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="style.css?ver=1.1" />
+  <link rel="stylesheet" type="text/css" href="style.css?ver=1.3" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body onload="changePage(Pages.ABOUT)">
+<body onload="initialLoad()">
   <nav>
     <input type="checkbox" id="nav-check">
     <div class="header">
       <div class="title">
-        <a href="./index.html">Lucy Gilbert</a>
+        <a href="./index.html?page=about">Lucy Gilbert</a>
       </div>
+    </div>
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    
+    <div class="nav-links">
+      <a id="aboutLink" href="./index.html?page=about">About</a>
+      <a id="skillsLink" href="./index.html?page=skills">Skills</a>
+      <a id="employmentLink" href="./index.html?page=employment">Employment</a>
+      <a id="contactLink" href="./index.html?page=contact">Contact</a>
     </div>
   </nav>
 
@@ -104,6 +118,6 @@
 
     <p>When trying to make things better for trans people, remember that that doesn't just mean trans women - trans men and non-binary people exist too. When you feel the need to create men's and women's groups, ask yourself: is this necessary? What will non-binary people do in this situation? Another common oversight is assuming that no trans person has periods, trans men may well have them and if you are doing things to help accommodate women during their period, try and do it in such a way as to help trans men too.</p>
   </div>
-  <script src="index.js?ver=1.1"></script>
+  <script src="index.js?ver=1.2"></script>
 </body>
 </html>
