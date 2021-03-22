@@ -81,12 +81,12 @@ p {
 }
 
 a {
-  color:darkblue;
+  color: black;
   text-decoration:none;
 }
 
 a:hover {
-  color: red;
+  color: #1bb00d;
 }
 
 img {
@@ -214,5 +214,16 @@ img {
 
   .container--float {
     float: none;
+  }
+}
+
+@media (max-width:480px) {
+  div#contact a {
+    font-size: 0.8rem;
+  }
+
+  .image--small {
+    height: 25px;
+    width: 25px;
   }
 }
