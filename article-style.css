@@ -42,6 +42,10 @@ video:focus {
   outline: none;
 }
 
+video {
+  width: 100%;
+}
+
 .container--main {
   font: 1.4rem "Montserrat", sans-serif;
   font-weight: 300;
@@ -67,7 +71,7 @@ video:focus {
   font-weight: 500;
 }
 
-@media (max-width:750px) {
+@media (max-width:900px) {
   aside {
     float: none;
     width: fit-content;
